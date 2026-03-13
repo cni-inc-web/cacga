@@ -1,14 +1,23 @@
-// Add return to main site link in nav 
-  document.addEventListener("DOMContentLoaded", function() {
-    const nav = document.querySelector('#classicNav');
-    if (nav) {
-      const newItem = document.createElement('li');
-      newItem.className = 'nav-item';
-      newItem.innerHTML = `<a class="nav-link" href="https://www.artsglenallen.com/">Return To Main Site</a>`;
-      nav.appendChild(newItem);
-      const newItem2 = document.createElement('li');
-      newItem2.className = 'nav-item';
-      newItem2.innerHTML = '<a class="nav-link" href="https://culturalartscenteratglenallen.ricoconsign.com/store/category/Events">Events</a>'
-      nav.appendChild(newItem2);
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const nav = document.querySelector("#classicNav");
+
+  if (!nav) return;
+
+  const links = [
+    { text: "Return To Main Site", url: "https://www.artsglenallen.com/" },
+    { text: "Events", url: "https://culturalartscenteratglenallen.ricoconsign.com/store/category/Events" }
+  ];
+
+  links.forEach(link => {
+    const li = document.createElement("li");
+    li.className = "nav-item";
+
+    const a = document.createElement("a");
+    a.className = "nav-link";
+    a.href = link.url;
+    a.textContent = link.text;
+
+    li.appendChild(a);
+    nav.appendChild(li);
   });
+});
