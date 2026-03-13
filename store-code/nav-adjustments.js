@@ -9,5 +9,6 @@
       const newItem2 = document.createElement('li');
       newItem2.className = 'nav-item';
       newItem2.innerHTML = '<a class="nav-link" href="https://culturalartscenteratglenallen.ricoconsign.com/store/category/Events">Events</a>'
+      nav.appendChild(newItem2);
     }
   });
